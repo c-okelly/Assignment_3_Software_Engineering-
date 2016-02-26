@@ -30,8 +30,21 @@ def toggle_seat(x,y):
     elif seat == 0:
         occupy_seat(x,y)
 
+# This will generate a list of indiviudal instruction for each coordiante
+def generate_coordiantes(instruction):
 
-def generate_coordiantes():
+    instruc_type = instruction[0]
+    start_x = int(instruction[1])
+    start_y = int(instruction[2])
+    finish_x = int(instruction[3])
+    finish_y = int(instruction[4])
+
+    finished_instruction_list = []
+
+    for x in range(start_x,(finish_x+1)):
+        print(x)
+
+    # Two for loops to generate instruction for range of coordiantes
 
     return
 
@@ -40,6 +53,9 @@ def intruction_manager(grid, instructioino_set):
 
     return
 
+
+# Count number of filled seats in the gird
+
 if __name__ == '__main__':
     grid = create_grid(5,5)
     print(grid)
@@ -47,5 +63,9 @@ if __name__ == '__main__':
     toggle_seat(0,1)
     print("hello")
 
-
+    # Print out grid bottom up so it make sense like a graph would
     print(grid[::-1])
+
+
+    generate_coordiantes(['empty', '660', '55', '665', '197'])
+
