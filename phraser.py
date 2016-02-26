@@ -20,10 +20,12 @@ def generate_instructions(file_name):
         # Split line on space
         no_space_line = new_line.split(" ")
 
-        # New line is everything in list bar "through"
-        cleaned_line = [no_space_line[0],no_space_line[1],no_space_line[3]]
-        # print(cleaned_line)
+        # Split cordinates on comma
+        start = no_space_line[1].split(",")
+        finish = no_space_line[3].split(",")
 
+         # New line is everything in list bar "through"
+        cleaned_line = [no_space_line[0],start[0],start[1],finish[0],finish[1]]
 
         # Add new line to list
         list_instructions.append(cleaned_line)
