@@ -32,13 +32,15 @@ def generate_instructions(file_name):
         # Add new line to list
         list_instructions.append(cleaned_line)
 
+    # Make instructions individual
+    individual_intructions = generate_indiviudal_instructions(list_instructions)
 
-    return list_instructions
+    return individual_intructions
 
 # Take instruction list of ranges and break it down into idiviudal instruction and return list
 # This will generate a list of indiviudal instruction for each coordiante
 
-def generate_coordiantes(instruction_set):
+def generate_indiviudal_instructions(instruction_set):
 
     master_instructions = []
 
@@ -59,9 +61,7 @@ def generate_coordiantes(instruction_set):
                 print(specific_instruc)
                 master_instructions.append(specific_instruc)
 
-        # Two for loops to generate instruction for range of coordiantes
-
-    return
+    return master_instructions
 
 
 
