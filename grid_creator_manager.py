@@ -1,12 +1,15 @@
 # Author = Conor O'Kelly
 
-import numpy
-
 def create_grid(x,y):
 
-    gird = numpy.zeros((x,y))
+    # Old method
+    # grid = numpy.zeros((x,y))
 
-    return gird
+    grid = []
+    for i in range(y):
+        grid.append((([0,])*x))
+
+    return grid
 
 # For locationg the correct set we swap the x and y order to better correlate with the graphicl illustration
 
