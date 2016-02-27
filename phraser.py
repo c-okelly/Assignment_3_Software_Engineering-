@@ -32,38 +32,11 @@ def generate_instructions(file_name):
         # Add new line to list
         list_instructions.append(cleaned_line)
 
-    # Make instructions individual
-    individual_intructions = generate_indiviudal_instructions(list_instructions)
+    # First version way of executing. Changes so instructions are generated and executed at same time
+    # # Make instructions individual
+    # individual_intructions = generate_indiviudal_instructions(list_instructions)
 
-    return individual_intructions
-
-# Take instruction list of ranges and break it down into idiviudal instruction and return list
-# This will generate a list of indiviudal instruction for each coordiante
-
-def generate_indiviudal_instructions(instruction_set):
-
-    master_instructions = []
-
-    for instruction in instruction_set:
-        # print(instruction)
-
-        instruc_type = instruction[0]
-        start_x = int(instruction[1])
-        start_y = int(instruction[2])
-        finish_x = int(instruction[3])
-        finish_y = int(instruction[4])
-
-        # For loops to iterate over x and y ranges
-        for x in range(start_x,(finish_x+1)):
-            for y in range(start_y,(finish_y+1)):
-
-                # Create specific instruction and append to main list
-                specific_instruc = [instruc_type, x, y]
-                #print(specific_instruc)
-                master_instructions.append(specific_instruc)
-
-    return master_instructions
-
+    return list_instructions
 
 
 if __name__ == '__main__':

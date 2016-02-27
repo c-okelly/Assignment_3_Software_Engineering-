@@ -31,8 +31,9 @@ def toggle_seat(grid,x,y):
         occupy_seat(grid,x,y)
 
 
-# Will take the crated grid and instruction set and apply instruction set to grid
-def intruction_manager(grid, instruction_set):
+# Will now also generate the instructions then execut them to reduce runtime
+
+def intruction_manager(grid, instruction):
 
     # Determine the type of instruction and carry out corresponding action
     for instruction in instruction_set:
@@ -48,6 +49,46 @@ def intruction_manager(grid, instruction_set):
 
     return grid
 
+# Take instruction list of ranges and break it down into idiviudal instruction and return list
+# This will generate a list of indiviudal instruction for each coordiante
+
+def generate_indiviudal_instructions_and_run(grid,instruction_set):
+
+
+    for instruction in instruction_set:
+        # print(instruction)
+
+        instruc_type = instruction[0]
+        start_x = int(instruction[1])
+        start_y = int(instruction[2])
+        finish_x = int(instruction[3])
+        finish_y = int(instruction[4])
+
+        # For loops to iterate over x and y ranges
+        for x in range(start_x,(finish_x+1)):
+            for y in range(start_y,(finish_y+1)):
+
+                # Create specific instruction and append to main list
+                specific_instruc = [instruc_type, x, y]
+                #print(specific_instruc)
+
+
+                #Execute required instruction
+
+                if specific_instruc[0] == "empty":
+                    empty_seat(grid,specific_instruc[1],specific_instruc[2])
+
+                elif specific_instruc[0] == "occupy":
+                    occupy_seat(grid,specific_instruc[1],specific_instruc[2])
+
+                elif specific_instruc[0] == "toggle":
+                    toggle_seat(grid,specific_instruc[1],specific_instruc[2])
+
+
+    return grid
+
+
+
 # Function to count the number of occupied seat in the grid
 
 def count_filled_seats(grid):
@@ -61,6 +102,7 @@ def count_filled_seats(grid):
                 filled_seats += 1
 
     return filled_seats
+
 
 
 # Count number of filled seats in the gird
