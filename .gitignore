@@ -1,4 +1,4 @@
 assignment_3.pdf
 .~lock.*
 .DS_store
-
+__pycache__/
