@@ -11,6 +11,8 @@ The system can change the number of occoupied chairs by adding people. removing 
 
 The system should carry out internal testing to ensure that it is running accuratly.
 
+After running all the instructions I found that the total number of occupised seats is 400410.
+
 
 All code in this project can be reused under the MIT License (MIT).
 
