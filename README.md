@@ -2,8 +2,6 @@ This is the readme for my third assignment in Software Engineering.
 
 This progject was created by Conor O'Kelly.
 
-All of this project will be written in python 3 format.
-
 The goal of the project is to create a system software thay can generate a grid given a specific size.
 This is used to represent chairs.
 
