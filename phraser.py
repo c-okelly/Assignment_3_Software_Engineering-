@@ -45,6 +45,7 @@ def generate_indiviudal_instructions(instruction_set):
     master_instructions = []
 
     for instruction in instruction_set:
+        # print(instruction)
 
         instruc_type = instruction[0]
         start_x = int(instruction[1])
@@ -58,7 +59,7 @@ def generate_indiviudal_instructions(instruction_set):
 
                 # Create specific instruction and append to main list
                 specific_instruc = [instruc_type, x, y]
-                print(specific_instruc)
+                #print(specific_instruc)
                 master_instructions.append(specific_instruc)
 
     return master_instructions
