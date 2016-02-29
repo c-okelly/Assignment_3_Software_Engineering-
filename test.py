@@ -75,10 +75,6 @@ def test_generate_instructions_from_file():
 
     input_text = "input_assign3.txt"
 
-    """occupy 119,486 through 246,900
-occupy 445,561 through 794,673
-empty 598,681 through 978,921"""
-
     output = phraser.generate_instructions(input_text)
     first_three_items = output[:3]
 
