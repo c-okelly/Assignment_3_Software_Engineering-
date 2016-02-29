@@ -2,6 +2,8 @@ This is the readme for my third assignment in Software Engineering.
 
 This progject was created by Conor O'Kelly.
 
+My Git repository is at https://github.com/c-okelly/Assignment_3_Software_Engineering-
+
 The goal of the project is to create a system software thay can generate a grid given a specific size.
 This is used to represent chairs.
 
