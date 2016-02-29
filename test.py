@@ -2,7 +2,7 @@
 import nose2
 
 import grid_creator_manager
-from phraser import *
+import phraser
 
 """
 This file will contain all of the test. The goal will be to carry out a test on each of the functions.
@@ -46,18 +46,45 @@ def test_toggle_seat():
 
     assert grid == [[1,0],[0,0]]
 
-def test_instruction_manager():
-    # Test Instruction manager
 
-    assert 0 == 0
-
+def test_generate_individual_instructions():
     # Test generate individual instructions
 
+    grid = grid_creator_manager.create_grid(4,2) # Create grid
+
+    # Set instructions one of each type
+    instructions_set = [["occupy","0","0","3","1"],["empty","0","0","3","0"],["toggle","2","0","3","1"]]
+
+    grid = grid_creator_manager.generate_indiviudal_instructions_and_run(grid,instructions_set) # Run instructions
+
+    assert grid == [[0, 0, 1, 1], [1, 1, 0, 0]]
+
+
+def test_count_filled_seats():
     # Test count filled seats
 
+    grid = [[0, 0, 1, 1], [1, 1, 0, 0]] # Set grid
+
+    result = grid_creator_manager.count_filled_seats(grid)
+
+    assert result == 4
+
+
+def test_generate_instructions_from_file():
     # Test generate instructions from file
 
+    input_text = "input_assign3.txt"
+
+    """occupy 119,486 through 246,900
+occupy 445,561 through 794,673
+empty 598,681 through 978,921"""
+
+    output = phraser.generate_instructions(input_text)
+    first_three_items = output[:3]
+
+    assert first_three_items == [['empty', '660', '55', '986', '197'], ['empty', '341', '304', '638', '850'], ['empty', '199', '133', '461', '193']]
 
 if __name__ == '__main__':
     nose2.main()
+
 
