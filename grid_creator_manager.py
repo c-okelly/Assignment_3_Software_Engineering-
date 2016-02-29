@@ -36,21 +36,21 @@ def toggle_seat(grid,x,y):
 
 # Will now also generate the instructions then execut them to reduce runtime
 
-def intruction_manager(grid, instruction):
-
-    # Determine the type of instruction and carry out corresponding action
-    for instruction in instruction_set:
-
-        if instruction[0] == "empty":
-            empty_seat(grid,instruction[1],instruction[2])
-
-        elif instruction[0] == "occupy":
-            occupy_seat(grid,instruction[1],instruction[2])
-
-        elif instruction[0] == "toggle":
-            toggle_seat(grid,instruction[1],instruction[2])
-
-    return grid
+# def intruction_manager(grid, instruction):
+#
+#     # Determine the type of instruction and carry out corresponding action
+#     for instruction in instruction_set:
+#
+#         if instruction[0] == "empty":
+#             empty_seat(grid,instruction[1],instruction[2])
+#
+#         elif instruction[0] == "occupy":
+#             occupy_seat(grid,instruction[1],instruction[2])
+#
+#         elif instruction[0] == "toggle":
+#             toggle_seat(grid,instruction[1],instruction[2])
+#
+#     return grid
 
 # Take instruction list of ranges and break it down into idiviudal instruction and return list
 # This will generate a list of indiviudal instruction for each coordiante
